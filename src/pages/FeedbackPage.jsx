@@ -15,7 +15,7 @@ export default function Feedback() {
     const fetchHistory = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/interviews', {
+        const response = await fetch('${process.env.REACT_APP_API_URL}api/interviews', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await response.json();
