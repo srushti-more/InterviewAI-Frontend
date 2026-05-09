@@ -6,13 +6,13 @@ import InterviewRoom from './pages/InterviewRoom';
 import Feedback from './pages/FeedbackPage'; // Assuming you have this from earlier
 
 
-const cors = require('cors');
+// const cors = require('cors');
 
-app.use(cors({
-    origin: '*', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: '*', 
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true
+// }));
 
 // A simple security guard component to protect private routes
 const PrivateRoute = ({ children }) => {
