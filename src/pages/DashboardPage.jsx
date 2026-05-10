@@ -20,7 +20,7 @@ export default function Dashboard() {
     }
     const fetchHistory = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/interviews`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/interviews`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.status === 401) handleLogout(); 
@@ -41,7 +41,7 @@ export default function Dashboard() {
     formData.append('jobDescription', jobDesc);
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload-resume', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/upload-resume`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData,

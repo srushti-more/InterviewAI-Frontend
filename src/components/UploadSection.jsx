@@ -35,7 +35,7 @@ export default function UploadSection() {
     formData.append('jobDescription', jobDescription);
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload-resume', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/upload-resume`, {
         method: 'POST',
         body: formData,
       });

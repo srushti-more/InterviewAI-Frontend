@@ -81,7 +81,7 @@ export default function InterviewRoom() {
 
         try {
           const token = localStorage.getItem('token');
-          const response = await fetch('http://localhost:5000/api/process-audio', {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/process-audio`, {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData,
@@ -145,7 +145,7 @@ export default function InterviewRoom() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/analyze-interview', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/analyze-interview`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ transcript: transcript })
